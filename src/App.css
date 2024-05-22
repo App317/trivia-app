@@ -77,16 +77,14 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 .navbar-text button {
   font-weight: 700;
   color: #fff;
-  border: 1px solid #fff;
+  border: 0.1vmin solid #fff;
   padding: 1vmin 2vmin;
   font-size: 2vmin;
 	position: relative;
 	background-color: transparent;
 	transition: 0.3s ease-in-out;
 }
-.navbar-text button span {
-  z-index: 1;
-}
+
 .navbar-text button::before {
   content: "";
   width: 0%;
