@@ -9,12 +9,9 @@ body {
   background-color: #55a57d;
   font-family: 'Centra', sans-serif;
 }
-
-
 /* Navbar CSS */
 .social-icon {
   display: inline-block;
-  margin-left: 1vmin;
 }
 .social-icon a {
   width: 5vmin;
@@ -52,18 +49,26 @@ body {
 nav.navbar {
   position: fixed;
   top: 0;
-  width: 100%;
-  transition:  0.32s ease-in-out;
-  background-color: #121212
+  width: 100vmax;
+  background-color: #121212;
+  display: flex;
+  justify-content: center;
+  padding: 1vmin;
 }
+
+
 nav.navbar .navbar-nav .nav-link.navbar-link {
+  display: inline-block;
   font-weight: 700;
   color: #fff;
   letter-spacing: 0.2vmin;
-  padding: 3vmin;
   font-size: 2vmin;
   opacity: 0.75;
   transition:  0.32s ease-in-out;
+  margin: 0 25vmin;
+}
+nav.navbar .navbar-nav a.nav-link.navbar-link:hover{
+  filter: drop-shadow(0 0.3vmin 0.9vmin rgba(0, 255, 255));
 }
 nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
 nav.navbar .navbar-nav a.nav-link.navbar-link.active {
@@ -73,9 +78,8 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   font-weight: 700;
   color: #fff;
   border: 1px solid #fff;
-  padding: 18px 34px;
-  font-size: 18px;
-  margin-left: 18px;
+  padding: 1vmin 2vmin;
+  font-size: 2vmin;
 	position: relative;
 	background-color: transparent;
 	transition: 0.3s ease-in-out;

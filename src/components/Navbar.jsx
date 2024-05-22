@@ -11,7 +11,7 @@ const BasicExample = () => {
   return (
     <Navbar>
       <Container>
-        <Nav className="me-auto">
+        <Nav>
           <div className="social-icon">
             <a
               href="https://www.linkedin.com/in/anthony-muniz-bueno-644648215/"
