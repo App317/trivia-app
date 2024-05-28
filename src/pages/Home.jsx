@@ -1,9 +1,10 @@
-import Navbar from '../components/Navbar';
+import styles from '../styles/home.module.css';
 const Home = () => {
   return (
     <>
-      <Navbar />
-      <div>Home</div>
+      <div className={styles.container}>
+        <div className={styles.title}>Welcome to Trivia!</div>
+      </div>
     </>
   );
 };

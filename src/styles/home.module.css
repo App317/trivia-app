@@ -1,0 +1,14 @@
+.container {
+    width: 100%;
+    display: flex;
+    background-color: rgb(68, 133, 100);
+    justify-content: center;
+    padding: 1vmin;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.title {
+    display: inline-block;
+    font-size: 10vmin;
+}
