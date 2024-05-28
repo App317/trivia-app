@@ -1,14 +1,31 @@
 .container {
     width: 100%;
     display: flex;
-    background-color: rgb(68, 133, 100);
+    background-color: #448564;
     justify-content: center;
     padding: 1vmin;
-    cursor: pointer;
     margin: 0 auto;
+    flex-direction: column;
 }
-
 .title {
-    display: inline-block;
+    display: flex;
     font-size: 10vmin;
+    align-self: center;
+}
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vmin;
+}
+.button {
+  font-size: 2vmin;
+  padding: 1vmin 1.5vmin; 
+  background-color: #7e29a0;
+  border-radius: 2vmin;
+  cursor: pointer;
+  transition: 0.3s ease; 
+  flex: 1 0 0;
+}
+.button:hover {
+    background-color: #4e1061;
 }

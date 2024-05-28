@@ -7,4 +7,9 @@ const getQuestions = async (category, difficulty) => {
   return response.data.results;
 };
 
-export default getQuestions;
+const getCategories = async () => {
+  const response = await axios.get('https://opentdb.com/api_category.php');
+  return response.data.trivia_categories;
+};
+
+export { getQuestions, getCategories };
