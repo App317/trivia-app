@@ -6,19 +6,30 @@
     padding: 1vmin;
     margin: 0 auto;
     flex-direction: column;
+    transition: background-color 0.3s ease;
 }
-
+.correct {
+    background-color: green;
+}
+.incorrect {
+    background-color: red;
+}
 .title {
     display: flex;
     font-size: 10vmin;
     align-self: center;
 }
-.buttons {
+.question {
+    display: flex;
+    font-size: 6vmin;
+    align-self: center;
+}
+.answers {
     display: flex;
     flex-wrap: wrap;
     gap: 2vmin;
 }
-.button {
+.answer {
   font-size: 2vmin;
   padding: 1vmin 1.5vmin; 
   background-color: #7e29a0;
@@ -27,6 +38,6 @@
   cursor: pointer;
   transition: 0.3s ease; 
 }
-.button:hover {
+.answer:hover {
   background-color: #4e1061;
 }

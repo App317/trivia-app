@@ -1,15 +1,21 @@
 import axios from 'axios';
 
-const getQuestions = async (category, difficulty) => {
+export const getQuestions = async (category, difficulty, token) => {
   const response = await axios.get(
-    `https://opentdb.com/api.php?amount=20&category=${category}&difficulty=${difficulty}&type=multiple`
+    `https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple&token=${token}`
   );
   return response.data.results;
 };
 
-const getCategories = async () => {
+export const getCategories = async () => {
   const response = await axios.get('https://opentdb.com/api_category.php');
   return response.data.trivia_categories;
 };
 
-export { getQuestions, getCategories };
+export const getSessionToken = async () => {
+  const response = await axios.get(
+    'https://opentdb.com/api_token.php?command=request'
+  );
+  console.log('Response: ', response);
+  return response.data.token;
+};

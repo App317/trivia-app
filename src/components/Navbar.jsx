@@ -22,7 +22,7 @@ const BasicExample = () => {
             </a>
           </div>
           <Nav.Link
-            href="#home"
+            href="/"
             className={
               activeLink === 'home' ? 'active navbar-link' : 'navbar-link'
             }
