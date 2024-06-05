@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-export const getQuestions = async (category, difficulty, token) => {
+export const getQuestions = async (category, token) => {
   const response = await axios.get(
-    `https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple&token=${token}`
+    `https://opentdb.com/api.php?amount=10&category=${category}&type=multiple&token=${token}`
   );
   return response.data.results;
 };

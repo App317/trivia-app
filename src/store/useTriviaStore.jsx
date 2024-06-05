@@ -42,7 +42,7 @@ const useTriviaStore = create((set, get) => ({
     }
   },
 
-  fetchQuestions: async (category, difficulty) => {
+  fetchQuestions: async (category) => {
     set({ loading: true, error: null });
     const token = get().sessionToken;
 
@@ -53,7 +53,7 @@ const useTriviaStore = create((set, get) => ({
     try {
       console.log('Fetching questions with token: ', token);
       await delay(5000); //To adhere to the rate limiter
-      const questions = await getQuestions(category, difficulty, token);
+      const questions = await getQuestions(category, token);
       console.log('Questions fetched:', questions);
       set({ questions, currentQuestionIndex: 0, loading: false });
       get().shuffleAnswers();

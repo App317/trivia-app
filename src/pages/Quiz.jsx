@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useTriviaStore from '../store/useTriviaStore';
+import he from 'he';
 import styles from '../styles/quiz.module.css';
 
 const Quiz = () => {
@@ -16,46 +17,57 @@ const Quiz = () => {
     nextQuestion,
     shuffledAnswers,
     checkAnswer,
-    correctAnswers,
-    incorrectAnswers,
     sessionToken,
+    fetchSessionToken,
     loading,
     error,
   } = useTriviaStore();
 
   const [feedback, setFeedback] = useState(null);
+  const [buttonsDisabled, setButtonsDisabled] = useState(false);
 
   useEffect(() => {
     const startQuiz = async () => {
-      if (category) {
-        selectCategory(category);
-        if (sessionToken) {
-          await fetchQuestions(category.id, 'easy');
-        } else {
-          console.log('Session token unavailable');
-        }
+      if (!category) {
+        navigate('/'); // Redirect to home if category is missing
+        return;
+      }
+      selectCategory(category);
+      if (sessionToken) {
+        await fetchQuestions(category.id);
+      } else {
+        console.log('Session token unavailable. Retrieving new session token');
+        await fetchSessionToken();
       }
     };
     startQuiz();
-  }, [category, selectCategory, fetchQuestions, sessionToken]);
+  }, [
+    category,
+    selectCategory,
+    fetchQuestions,
+    fetchSessionToken,
+    sessionToken,
+    navigate, // Ensure navigate is included in dependencies
+  ]);
 
   const currentQuestion = questions[currentQuestionIndex];
 
   const handleAnswerClick = (answer) => {
     const isCorrect = answer === currentQuestion.correct_answer;
-
     setFeedback(isCorrect ? 'correct' : 'incorrect');
+    setButtonsDisabled(true);
 
     checkAnswer(answer);
 
     setTimeout(() => {
       setFeedback(null);
+      setButtonsDisabled(false);
       if (currentQuestionIndex < questions.length - 1) {
         nextQuestion();
       } else {
         navigate('/results');
       }
-    }, 1000); // Adjust the timeout duration as needed
+    }, 1000);
   };
 
   const handleNextQuestion = () => {
@@ -67,13 +79,6 @@ const Quiz = () => {
       navigate('/results');
     }
   }, [currentQuestionIndex, questions.length, navigate]);
-
-  useEffect(() => {
-    console.log('Current Question: ', currentQuestion);
-    console.log('Current Answers: ', shuffledAnswers);
-    console.log('Correct answer: ', correctAnswers);
-    console.log('Incorrect answers: ', incorrectAnswers);
-  }, [currentQuestion, shuffledAnswers, correctAnswers, incorrectAnswers]);
 
   if (loading) {
     return <div>Loading Questions...</div>;
@@ -90,21 +95,26 @@ const Quiz = () => {
       </h1>
       {currentQuestion && (
         <div>
-          <h3 className={styles.question}>{currentQuestion.question}</h3>
+          <h3 className={styles.question}>
+            {he.decode(currentQuestion.question)}
+          </h3>
           <div className={styles.answers}>
             {shuffledAnswers.map((answer, index) => (
               <button
                 key={index}
                 className={styles.answer}
                 onClick={() => handleAnswerClick(answer)}
+                disabled={buttonsDisabled}
               >
-                {answer}
+                {he.decode(answer)}
               </button>
             ))}
           </div>
         </div>
       )}
-      <button onClick={handleNextQuestion}>Next Question</button>
+      <button onClick={handleNextQuestion} disabled={buttonsDisabled}>
+        Next Question
+      </button>
     </div>
   );
 };
