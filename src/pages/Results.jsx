@@ -1,19 +1,15 @@
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import useTriviaStore from '../store/useTriviaStore';
+import styles from '../styles/results.module.css';
 
 const Results = () => {
   const navigate = useNavigate();
-  const {
-    correctAnswers,
-    incorrectAnswers,
-    selectedCategory,
-    fetchQuestions,
-    loading,
-  } = useTriviaStore();
+  const { correctAnswers, incorrectAnswers, selectedCategory } =
+    useTriviaStore();
 
   const handleContinue = async () => {
     if (selectedCategory) {
-      await fetchQuestions(selectedCategory.id);
       navigate('/quiz');
     }
   };
@@ -22,16 +18,30 @@ const Results = () => {
     navigate('/');
   };
 
-  if (loading) {
-    return <div>Loading New Questions...</div>;
-  }
+  useEffect(() => {
+    if (!selectedCategory) {
+      navigate('/');
+    }
+  });
+
   return (
-    <div>
-      <h1>Quiz Results</h1>
-      <p>Correct Answers: {correctAnswers}</p>
-      <p>Incorrect Answers: {incorrectAnswers}</p>
-      <button onClick={handleContinue}>Continue Category</button>
-      <button onClick={handleGoHome}>Go Home</button>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Quiz Results</h1>
+      <div className={styles.totalAnswers}>
+        <p className={styles.correctAnswers}>
+          Total Correct Answers: {correctAnswers}
+        </p>
+        |
+        <p className={styles.incorrectAnswers}>
+          Total Incorrect Answers: {incorrectAnswers}
+        </p>
+      </div>
+      <button className={styles.button} onClick={handleContinue}>
+        Continue Category
+      </button>
+      <button className={styles.button} onClick={handleGoHome}>
+        Go Home
+      </button>
     </div>
   );
 };

@@ -25,13 +25,13 @@ nav.navbar {
 }
 
 .social-icon {
-  display: inline-block;
+  display: inline-block
 }
 .social-icon a {
   width: 5vmin;
   height: 5vmin;
   background: rgba(217, 217, 217, 0.1);
-  display: inline-flex;
+  display: flex;
   border-radius: 50%;
   align-items: center;
   justify-content: center;
@@ -67,7 +67,7 @@ nav.navbar .navbar-nav .nav-link.navbar-link {
   font-size: 2vmin;
   opacity: 0.75;
   transition:  0.32s ease-in-out;
-  margin: 0 20vmin;
+  margin: 0 18vmin;
 }
 nav.navbar .navbar-nav a.nav-link.navbar-link:hover{
   filter: drop-shadow(0 0.3vmin 0.9vmin rgba(0, 255, 255));

@@ -15,8 +15,6 @@ const useTriviaStore = create((set, get) => ({
   shuffledAnswers: [],
   correctAnswers: 0,
   incorrectAnswers: 0,
-  timer: 30,
-  intervalId: null,
   sessionToken: null,
   loading: false,
   error: null,
@@ -57,6 +55,13 @@ const useTriviaStore = create((set, get) => ({
       console.log('Questions fetched:', questions);
       set({ questions, currentQuestionIndex: 0, loading: false });
       get().shuffleAnswers();
+      if (questions.length === 0) {
+        set({
+          loading: false,
+          error:
+            'No questions available for selected category. You have exhausted all questions or your session has expired.',
+        });
+      }
     } catch (error) {
       console.error('Failed to fetch questions:', error);
       set({ loading: false, error: 'Failed to fetch questions' });
@@ -96,8 +101,6 @@ const useTriviaStore = create((set, get) => ({
       set((state) => ({ incorrectAnswers: state.incorrectAnswers + 1 }));
     }
   },
-
-  runTimer: () => {},
 }));
 
 export default useTriviaStore;
