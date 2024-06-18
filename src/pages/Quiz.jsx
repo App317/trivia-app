@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useTriviaStore from '../store/useTriviaStore';
+import { delay } from '../utils/delay';
 import he from 'he';
 import styles from '../styles/quiz.module.css';
 
@@ -50,7 +51,7 @@ const Quiz = () => {
 
   const currentQuestion = questions[currentQuestionIndex];
 
-  const handleAnswerClick = (answer) => {
+  const handleAnswerClick = async (answer) => {
     const isCorrect = answer === currentQuestion.correct_answer;
     setFeedback(isCorrect ? 'correct' : 'incorrect');
     setButtonsDisabled(true);
@@ -58,16 +59,17 @@ const Quiz = () => {
 
     checkAnswer(answer);
 
-    setTimeout(() => {
-      setFeedback(null);
-      setButtonsDisabled(false);
-      setCorrectAnswer(null);
-      if (currentQuestionIndex < questions.length - 1) {
-        nextQuestion();
-      } else {
-        navigate('/results');
-      }
-    }, 2000);
+    await delay(2000);
+
+    setFeedback(null);
+    setButtonsDisabled(false);
+    setCorrectAnswer(null);
+
+    if (currentQuestionIndex < questions.length - 1) {
+      nextQuestion();
+    } else {
+      navigate('/results');
+    }
   };
 
   if (loading) {
