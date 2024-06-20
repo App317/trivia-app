@@ -1,5 +1,3 @@
-
-![Logo](https://opentdb.com/images/logo.png)
 <p>
  <img align="center" src="https://opentdb.com/images/logo.png">
 </p>
