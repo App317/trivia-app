@@ -8,7 +8,7 @@
 Play some trivia provided and submitted by various users with the use of OpenTDB!
 
 ## Link to Webpage
-<a href="https://app317-trivia-app.netlify.app/">Trivia App</a>
+<a href="https://app317-trivia-app.netlify.app/" target="_blank">Trivia App</a>
 
 
 ## Acknowledgements
