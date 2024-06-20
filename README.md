@@ -1,5 +1,5 @@
 <p align="center">
- <img src="https://opentdb.com/images/logo.png">
+ <img href="https://opentdb.com" src="https://opentdb.com/images/logo.png">
 </p>
 
 
