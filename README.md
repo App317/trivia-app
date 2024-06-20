@@ -1,6 +1,8 @@
 
 ![Logo](https://opentdb.com/images/logo.png)
-
+<p>
+ <img src="https://opentdb.com/images/logo.png">
+</p>
 
 
 # Trivia Project App
