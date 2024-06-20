@@ -8,8 +8,8 @@
 Play some trivia provided and submitted by various users with the use of OpenTDB!
 
 ## Link to Webpage
+<a href="https://app317-trivia-app.netlify.app/">Trivia App</a>
 
-https://app317-trivia-app.netlify.app/
 
 ## Acknowledgements
 
@@ -122,7 +122,7 @@ In `Quiz.jsx`, I use the 'he' library to decode HTML characters found in the API
 ### Results.jsx
 `Results.jsx` displays the total correct and incorrect answers for a category when the quiz is concluded, while also giving the option to continue with another quiz within the same category, or returning home.
 ## 🔗 Links
-[![Static Badge](https://img.shields.io/badge/Trivia_Project-61DBFB?style=for-the-badge&logo=react&labelColor=black)](https://app317-trivia-app.netlify.app/)
+[![Static Badge](https://img.shields.io/badge/Trivia_App-61DBFB?style=for-the-badge&logo=react&labelColor=black)](https://app317-trivia-app.netlify.app/)
 
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://app317-portfolio.netlify.app/)
 
