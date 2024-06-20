@@ -120,8 +120,11 @@ In `Quiz.jsx`, I use the 'he' library to decode HTML characters found in the API
 `Results.jsx` displays the total correct and incorrect answers for a category when the quiz is concluded, while also giving the option to continue with another quiz within the same category, or returning home.
 ## 🔗 Links
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://app317-portfolio.netlify.app/)
+
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/anthony-muniz-bueno-644648215/)
-![Static Badge](https://img.shields.io/badge/Trivia_Project-61DBFB?style=for-the-badge&logo=react&labelColor=black&link=https%3A%2F%2Fapp317-trivia-app.netlify.app%2F)
+
+[![Static Badge](https://img.shields.io/badge/Trivia_Project-61DBFB?style=for-the-badge&logo=react&labelColor=black)](https://app317-trivia-app.netlify.app/)
+
 
 
 
