@@ -1,7 +1,7 @@
 
 ![Logo](https://opentdb.com/images/logo.png)
 <p>
- <img src="https://opentdb.com/images/logo.png">
+ <img align="center" src="https://opentdb.com/images/logo.png">
 </p>
 
 
