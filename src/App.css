@@ -100,6 +100,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 }
 .navbar-text button:hover {
   color: #121212;
+  cursor: pointer;
 }
 .navbar-text button:hover::before {
 	content: "";

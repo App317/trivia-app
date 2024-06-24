@@ -14,7 +14,11 @@ const BasicExample = () => {
           <Nav.Link href="/" className="navbar-link">
             Home
           </Nav.Link>
-          <Nav.Link href="#quiz" className="navbar-link">
+          <Nav.Link
+            href="https://anthonymb-portfolio.netlify.app/"
+            target="_blank"
+            className="navbar-link"
+          >
             Portfolio
           </Nav.Link>
           <Nav.Link
