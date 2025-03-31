@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import useTriviaStore from '../store/useTriviaStore';
 import { delay } from '../utils/delay';
 import he from 'he';
+import { LineSpinner } from 'ldrs/react';
+import 'ldrs/react/LineSpinner.css';
 import styles from '../styles/quiz.module.css';
 
 const Quiz = () => {
@@ -37,6 +39,7 @@ const Quiz = () => {
         console.log('Session token unavailable. Retrieving new session token');
         await fetchSessionToken();
       }
+
       await fetchQuestions(selectedCategory.id);
     };
 
@@ -72,21 +75,33 @@ const Quiz = () => {
     }
   };
 
-  if (loading) {
-    return <div>Loading Questions...</div>;
-  }
-
   if (error) {
     return (
-      <div>
-        Error: {error} <br /> Please wait to be redirected home...
+      <div className={styles.container}>
+        Error: {error} <br /> Please refresh the page
+      </div>
+    );
+  }
+
+  if (loading) {
+    return (
+      <div className={styles.container}>
+        <div className={styles.title}>
+          Loading <br /> questions...
+        </div>
+        <div className={styles.loading}>
+          <LineSpinner size="50" stroke="3" speed="1" color="black" />
+        </div>
       </div>
     );
   }
 
   return (
     <div className={`${styles.container} ${feedback ? styles[feedback] : ''}`}>
-      <p> {currentQuestionIndex + 1 + '/' + questions.length}</p>
+      <div className={styles.questionIndex}>
+        {' '}
+        {currentQuestionIndex + 1 + '/' + questions.length}
+      </div>
       <h1 className={styles.title}>
         Quiz {selectedCategory ? `- ${selectedCategory.name}` : ''}
       </h1>

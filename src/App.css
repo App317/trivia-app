@@ -7,9 +7,11 @@
 body {
   display: flex; /* Added flex display to body */
   justify-content: center; /* Centering the container horizontally */
-  align-items: center; /* Centering the container vertically */
-  height: 100vh; /* Full height to center vertically */
-  background-color: #55a57d;
+  background-color: #b6f3bd;
+  background-image:  linear-gradient(135deg, #3d8467 25%, transparent 25%), linear-gradient(225deg, #3d8467 25%, transparent 25%), linear-gradient(45deg, #3d8467 25%, transparent 25%), linear-gradient(315deg, #3d8467 25%, #b6f3bd 25%);
+  background-position:  0 4vmin, 0 4vmin, 0 0, 0 0;
+  background-size: 8vmin 9vmin;
+  background-repeat: repeat;
   font-family: 'Centra', sans-serif;
 }
 /* Navbar CSS */
@@ -21,7 +23,7 @@ nav.navbar {
   background-color: #121212;
   display: flex;
   justify-content: center;
-  padding: 1vmin;
+  padding: 0.5rem;
 }
 
 .social-icon {
@@ -64,10 +66,10 @@ nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 700;
   color: #fff;
   letter-spacing: 0.2vmin;
-  font-size: 2vmin;
+  font-size: 1.3rem;
   opacity: 0.75;
   transition:  0.32s ease-in-out;
-  margin: 0 18vmin;
+  margin: 0 15rem;
 }
 nav.navbar .navbar-nav a.nav-link.navbar-link:hover{
   filter: drop-shadow(0 0.3vmin 0.9vmin rgba(0, 255, 255));
@@ -82,7 +84,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   color: #fff;
   border: 0.1vmin solid #fff;
   padding: 1vmin 2vmin;
-  font-size: 2vmin;
+  font-size: 1.3rem;
 	position: relative;
 	background-color: transparent;
 	transition: 0.3s ease-in-out;
