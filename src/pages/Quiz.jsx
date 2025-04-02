@@ -107,7 +107,9 @@ const Quiz = () => {
       </h1>
       {currentQuestion && (
         <div>
-          <h3 className={styles.question}>
+          <h3
+            className={`${styles.question} ${feedback ? styles[feedback] : ''}`}
+          >
             {he.decode(currentQuestion.question)}
           </h3>
           <div className={styles.answers}>

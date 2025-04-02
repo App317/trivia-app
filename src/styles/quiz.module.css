@@ -12,6 +12,14 @@
  flex-direction: column;
  transition: background-color 0.3s ease;
 }
+.question {
+ display: flex;
+ background-color: #305e47;
+ font-size: 4rem;
+ align-self: center;
+ justify-content: center;
+ margin: auto;
+}
 .correct {
  background-color: green;
 }
@@ -29,14 +37,7 @@
  display: flex;
  font-size: 1.8rem;
 }
-.question {
- display: flex;
- background-color: #305e47;
- font-size: 4rem;
- align-self: center;
- justify-content: center;
- margin: auto;
-}
+
 .answers {
  display: flex;
  flex-wrap: wrap;
