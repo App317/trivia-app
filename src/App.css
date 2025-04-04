@@ -7,11 +7,8 @@
 body {
   display: flex; /* Added flex display to body */
   justify-content: center; /* Centering the container horizontally */
-  background-color: #b6f3bd;
-  background-image:  linear-gradient(135deg, #3d8467 25%, transparent 25%), linear-gradient(225deg, #3d8467 25%, transparent 25%), linear-gradient(45deg, #3d8467 25%, transparent 25%), linear-gradient(315deg, #3d8467 25%, #b6f3bd 25%);
-  background-position:  0 4vmin, 0 4vmin, 0 0, 0 0;
-  background-size: 8vmin 9vmin;
-  background-repeat: repeat;
+  background-color: #4949b9;
+  background-image: repeating-radial-gradient( circle at 0 0, transparent 0, #4949b9 40px ), repeating-linear-gradient( #8f63d755, #8f63d7 );
   font-family: 'Centra', sans-serif;
 }
 /* Navbar CSS */
