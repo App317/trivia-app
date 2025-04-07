@@ -17,31 +17,79 @@
  font-weight: 900;
  margin-bottom: 2rem;
  align-self: center;
- text-shadow: #2c0646;
+ text-shadow: 3px 5px 6px #2c0646;
 }
 .buttons {
  display: flex;
  justify-content: space-around;
  flex-wrap: wrap;
  gap: 1.2rem;
+ position: relative;
+ z-index: 0;
 }
 .button {
  font-size: 1.3rem;
  font-weight: 600;
+ background: #111;
  justify-content: center;
  padding: 1.8rem;
- background-color: #0f7477;
+ position: relative;
 
- border: solid black 0.2rem;
- border-radius: 2rem;
+ 
+ border-radius: 2.2rem;
  
  box-sizing: border-box;
  flex: 1 0 0;
  cursor: pointer;
  transition: background 0.5s ease-out; 
+ 
 }
+.button::before {
+ content: "";
+ background: linear-gradient( 45deg,
+ #ff0000,
+ #ff7300,
+ #fffb00,
+ #48ff00,
+ #00ffd5,
+ #002bff,
+ #7a00ff,
+ #ff00c8,
+ #ff0000);
+ position: absolute;
+ top: -3px;
+ left: -3px;
+ right: -3px;
+ bottom: -3px;
+
+ background-size: 400%;
+ z-index: -1;
+ filter: blur(5px);
+ -webkit-filter: blur(5px);
+ animation: glowing-button 20s linear infinite;
+ transition: opacity 0.3s ease-in-out;
+ border-radius: 2rem;
+ 
+}
+@keyframes glowing-button {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+}
+
 .button:hover, .button:active  {
- background: none;
- background-color: #0ba0c5;
+ background: #11bfeb;
+ text-shadow: 3px 5px 6px rgba(0,0,0,0.6);
  filter: drop-shadow(0 0.3vmin 0.9vmin #ffae00);
+}
+
+.button:hover::before, .button:active::before {
+ opacity: 0;
+ transition: opacity ease-in-out;
 }
