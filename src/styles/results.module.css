@@ -1,7 +1,9 @@
 .container {
  width: 100%;
  display: flex;
- background-color: #448564;
+ background-image:
+ radial-gradient(ellipse at top, #b63e88cc,#222cb875,  transparent),
+ radial-gradient(ellipse at bottom, #2c0646, transparent );
  justify-content: center;
  padding: 1vmin;
  margin: 0 auto;
@@ -17,7 +19,7 @@
  flex-wrap: wrap;
  gap: 2vmin;
  font-size: 4vmin;
- background-color: #2d5843;
+ font-weight: 600;
 }
 .correctAnswers {
  color: rgb(87, 202, 87);
@@ -27,13 +29,15 @@
 }
 .button {
  font-size: 3vmin;
+ font-weight: 600;
  padding: 2vmin 1.5vmin; 
  margin: 1.5vmin;
- background-color: #7e29a0;
+ background-color: #0f7477;
  border-radius: 2vmin;
  cursor: pointer;
  transition: 0.3s ease; 
 }
 .button:hover {
- background-color: #4e1061;
+ background-color: #0ba0c5;
+ filter: drop-shadow(0 0.3vmin 0.9vmin #ffae00);
 }

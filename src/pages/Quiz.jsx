@@ -90,7 +90,7 @@ const Quiz = () => {
           Loading <br /> questions...
         </div>
         <div className={styles.loading}>
-          <LineSpinner size="50" stroke="3" speed="1" color="black" />
+          <LineSpinner size="50" stroke="3" speed="1" color="pink" />
         </div>
       </div>
     );
@@ -107,9 +107,7 @@ const Quiz = () => {
       </h1>
       {currentQuestion && (
         <div>
-          <h3
-            className={`${styles.question} ${feedback ? styles[feedback] : ''}`}
-          >
+          <h3 className={styles.question}>
             {he.decode(currentQuestion.question)}
           </h3>
           <div className={styles.answers}>

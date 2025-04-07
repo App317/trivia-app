@@ -62,7 +62,7 @@ nav.navbar .navbar-nav .nav-link.navbar-link {
   display: inline-block;
   font-weight: 700;
   color: #fff;
-  letter-spacing: 0.2vmin;
+  letter-spacing: 0.1rem;
   font-size: 1.3rem;
   opacity: 0.75;
   transition:  0.32s ease-in-out;
@@ -80,7 +80,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   font-weight: 700;
   color: #fff;
   border: 0.1vmin solid #fff;
-  padding: 1vmin 2vmin;
+  padding: 0.8rem 1rem;
   font-size: 1.3rem;
 	position: relative;
 	background-color: transparent;

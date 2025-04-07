@@ -2,7 +2,7 @@
  width: 85%;
  display: flex;
  background-image:
-  radial-gradient(ellipse at top, #0c8e9f,#222cb875,  transparent),
+  radial-gradient(ellipse at top, #b63e88cc,#222cb875,  transparent),
   radial-gradient(ellipse at bottom, #2c0646, transparent );
  padding: 3rem;
  border: solid black 0.5rem;
@@ -17,6 +17,7 @@
  font-weight: 900;
  margin-bottom: 2rem;
  align-self: center;
+ text-shadow: #2c0646;
 }
 .buttons {
  display: flex;
@@ -28,8 +29,8 @@
  font-size: 1.3rem;
  font-weight: 600;
  justify-content: center;
- padding: 0.85rem 2.1rem; 
- background-color: #5B42F3;
+ padding: 1.8rem;
+ background-color: #0f7477;
 
  border: solid black 0.2rem;
  border-radius: 2rem;
@@ -41,6 +42,6 @@
 }
 .button:hover, .button:active  {
  background: none;
- background-color: #AF40FF;
- filter: drop-shadow(0 0.3vmin 0.9vmin rgba(0, 255, 255));
+ background-color: #0ba0c5;
+ filter: drop-shadow(0 0.3vmin 0.9vmin #ffae00);
 }

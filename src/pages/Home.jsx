@@ -25,15 +25,17 @@ const Home = () => {
     <div className={styles.container}>
       <h1 className={styles.title}>Welcome to Trivia!</h1>
       <div className={styles.buttons}>
-        {categories.map((category) => (
-          <button
-            key={category.id}
-            className={styles.button}
-            onClick={() => handleCategoryClick(category)}
-          >
-            {category.name}
-          </button>
-        ))}
+        {categories
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .map((category) => (
+            <button
+              key={category.id}
+              className={styles.button}
+              onClick={() => handleCategoryClick(category)}
+            >
+              {category.name}
+            </button>
+          ))}
       </div>
     </div>
   );
