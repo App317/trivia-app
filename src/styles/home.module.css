@@ -1,10 +1,10 @@
 .container {
- width: 85%;
+ width: 95%;
  display: flex;
  background-image:
   radial-gradient(ellipse at top, #b63e88cc,#222cb875,  transparent),
   radial-gradient(ellipse at bottom, #2c0646, transparent );
- padding: 3rem;
+ padding: 3vmin;
  border: solid black 0.5rem;
  border-radius: 5rem;
  margin: 0 auto;
@@ -32,7 +32,7 @@
  font-weight: 600;
  background: #111;
  justify-content: center;
- padding: 1.8rem;
+ padding: 3vmin;
  position: relative;
 
  
