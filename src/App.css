@@ -6,6 +6,7 @@
 }
 body {
   display: flex;
+  
   justify-content: center; 
   background-color: #4949b9;
   background-image: repeating-radial-gradient( circle at 0 0, transparent 0, #4949b9 40px ), repeating-linear-gradient( #8f63d755, #8f63d7 );
@@ -13,9 +14,8 @@ body {
 }
 /* Navbar CSS */
 nav.navbar {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
   width: 100%;
   background-color: #121212;
   display: flex;
@@ -46,7 +46,7 @@ nav.navbar {
   background-color: #ffffff;
   border-radius: 50%;
   transform: scale(0);
-	transition: 0.3s ease-in-out;
+	transition: filter 0.3s ease-in-out;
 }
 .social-icon a:hover::before {
   transform: scale(1);
@@ -54,7 +54,7 @@ nav.navbar {
 .social-icon a img {
 	width: 60%;
 	z-index: 1;
-	transition: 0.3s ease-in-out;
+	transition: filter 0.3s ease-in-out;
 }
 .social-icon a:hover img {
 	filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
@@ -67,7 +67,7 @@ nav.navbar .navbar-nav .nav-link.navbar-link {
   letter-spacing: 0.1rem;
   font-size: 1.3rem;
   opacity: 0.75;
-  transition:  0.32s ease-in-out;
+  transition:  filter 0.32s ease-in-out, opacity 0.32s ease-in-out;
   padding: 0.5vmin 25vmin;
   white-space: nowrap;
 }
@@ -91,7 +91,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   font-size: 1.3rem;
 	position: relative;
 	background-color: transparent;
-	transition: 0.3s ease-in-out;
+	transition: color 0.3s ease-in-out;
   white-space: nowrap;
 }
 .navbar-text button::before {
@@ -103,17 +103,14 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   left: 0;
   top: 0;
   z-index: -1;
-  transition: 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
 }
 .navbar-text button:hover {
   color: #121212;
   cursor: pointer;
 }
 .navbar-text button:hover::before {
-	content: "";
 	width: 100%;
-	height: 100%;
-	position: absolute;
 }
 
 

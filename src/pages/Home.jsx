@@ -23,7 +23,30 @@ const Home = () => {
 
   return (
     <div className={styles.container}>
+      <div
+        style={{
+          display: 'flex',
+          width: '100%',
+          justifyContent: 'center',
+        }}
+      >
+        <div
+          style={{
+            display: 'flex',
+            gap: 8,
+            maxWidth: '1000px',
+            width: '100%',
+            justifyContent: 'space-between',
+          }}
+        >
+          <button>blah</button>
+          <button>blah</button>
+          <button>blah</button>
+          <button>blah</button>
+        </div>
+      </div>
       <h1 className={styles.title}>Welcome to Trivia!</h1>
+
       <div className={styles.buttons}>
         {categories
           .sort((a, b) => a.name.localeCompare(b.name))
