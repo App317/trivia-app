@@ -6,7 +6,6 @@
 }
 body {
   display: flex;
-  
   justify-content: center; 
   background-color: #4949b9;
   background-image: repeating-radial-gradient( circle at 0 0, transparent 0, #4949b9 40px ), repeating-linear-gradient( #8f63d755, #8f63d7 );
@@ -76,7 +75,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link:hover{
 }
 nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
 nav.navbar .navbar-nav a.nav-link.navbar-link.active {
-    opacity: 1;
+  opacity: 1;
 }
 .navbar-text {
   margin-left: auto;
@@ -152,7 +151,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 970px) {
   nav.navbar .navbar-nav .nav-link.navbar-link {
     font-size: 1.1rem;
     padding: 0.5vmin 2.8vmin;

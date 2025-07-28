@@ -15,6 +15,7 @@
  background-image:
   radial-gradient(ellipse at top, var(--from-color),var(--to-color),  transparent),
   radial-gradient(ellipse at bottom, #2c0646, transparent );
+ max-width: 2000px;
  padding: 7vmin;
  border: solid black 0.5rem;
  border-radius: 5rem;
